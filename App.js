@@ -4,7 +4,7 @@ import { Image } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import "react-native-get-random-values";
 
-// 🧩 Import custom hook for presence
+
 import { useUserPresence } from "./hooks/useUserPresence";
 
 // Screens
