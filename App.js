@@ -20,7 +20,7 @@ import VoiceInput from "./screens/VoiceInput";
 import Wallet from "./screens/Wallet";
 import ForgotPassword from "./screens/ForgotPassword";
 import Profile from "./screens/Profile";
-import Splashscreen from "./screens/Splashscreen"; // ✅ splash animation after login
+import Splashscreen from "./screens/Splashscreen"; 
 
 // Logo
 import shamLogo from "./assets/logo2.png.png";
@@ -28,7 +28,6 @@ import shamLogo from "./assets/logo2.png.png";
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-  // ✅ Activate real-time presence tracking
   useUserPresence();
 
   return (
