@@ -1,5 +1,5 @@
 // hooks/useShamBot.js
-import { OPENAI_API_KEY } from "@env"; // ✅ from .env file
+import { OPENAI_API_KEY } from "@env"; 
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import NetInfo from "@react-native-community/netinfo";
 import dataset from "../assets/data/shambot_dataset_v2.json";
@@ -31,9 +31,7 @@ export const useShamBot = () => {
     return bestScore > 0.4 ? bestMatch : null;
   };
 
-  /**
-   * 🔹 Detect if question is general (non-crypto)
-   */
+
   const isGeneralQuestion = (text) => {
     const keywords = [
       "who", "what", "when", "where", "why", "how", "weather", "news",
@@ -46,9 +44,7 @@ export const useShamBot = () => {
     return keywords.some((k) => lower.includes(k)) && !cryptoKeywords.some((k) => lower.includes(k));
   };
 
-  /**
-   * 🔹 Reliable internet check (works in Expo / Android)
-   */
+
   const hasInternet = async () => {
     try {
       const state = await NetInfo.fetch();
@@ -60,9 +56,7 @@ export const useShamBot = () => {
     }
   };
 
-  /**
-   * 🔹 Main brain — ShamBot logic
-   */
+
   const askShamBot = async (userPrompt) => {
     if (!userPrompt || !userPrompt.trim()) {
       return "🙂 Please ask something about ShamCoin, crypto, or general topics.";
